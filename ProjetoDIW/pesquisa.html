@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7297b24f8d.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="imagem/png" href="/IMAGENS/Gamein.png" />
+    <title id="title">Pesquisa</title>
+    <link rel="stylesheet" href="detalhes.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/index.html">Game.in</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Destaques</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Lançamentos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Plataformas</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Publicadores</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/index.html">Sobre</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+    </header>
+       <div class="autor">
+        <h5>Anna Carla Teixeira da Silva - Análise e Desenvolvimento de Sistemas <strong>Matrícula:</strog> 796175</h5>
+    </div>
+
+      <div class="pesquisa_jogos">
+        <div class="row">
+          <div class="col-sm-11 searchbarra">
+            <input class="form-control me-2" type="text" id="txtSearch" placeholder="Pesquisar Jogos">
+          </div>
+          <div class="col-sm-1 searchbuttom">
+            <button class="btn btn-outline-success" id="btnSearch"><i class='bx bx-search'></i></button>
+          </div>
+        </div>
+      </div>
+
+    <!--INFOS SOBRE O JOGO-->
+    <div class="container">
+            <div id="gamesPlace" class="row">
+        
+            </div>
+        </div>
+
+    <script>
+        /*BARRA DE PESQUISA*/
+            const apiKey = '01db6a3f7bc84ddbbc1da3dcd32be26b'
+            let txtSearch = document.getElementById('txtSearch')
+            let btnSearch = document.getElementById('btnSearch')
+            let gamesPlace = document.getElementById('gamesPlace')
+    
+            function doSearch () {
+                let textoPesquisa = txtSearch.value
+                let url = `https://api.rawg.io/api/games?key=${apiKey}&search=${textoPesquisa}`
+    
+                fetch (url)
+                    .then(res =>  res.json())
+                    .then(data =>{
+                        let saida = ''
+                        for (let i = 0; i < data.results.length; i++){
+                            let game = data.results[i]
+                            saida += `
+                            <div class="card mb-3" style="max-width: 1300px;">
+                                <div class="row">
+                                <div class="col-md-4">
+                                    <img src="${game.background_image}" class="img-fluid rounded-start" width="400px" heigth="400px">
+                                </div>
+                                <div class="col-md-8">
+                                    <ul>
+                                        <p class="text">
+                                            <strong>${game.name}</strong>
+                                        </p>
+                                            <div class="infos">
+                                                <span class="data"><strong>Lançamento: </strong>${game.released}</span>
+                                                <span class="data" class="nota"><strong>Avaliação: </strong>${game.rating}</span>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                          <div class="btn-group">
+                                            <a href="/detalhes.html?id=${game.id}" <button type="button" class="btn btn-sm btn-outline-secondary details">Mais detalhes</button></a>                                          </div>
+                                          </div>
+                                        </ul>
+                                </div>
+                                </div>
+                                </div>`
+                        }
+                        gamesPlace.innerHTML = saida
+                    })
+            }
+    
+            document.body.onload = () => { //Processamento do botão (executa como se fosse a inicialização da página)
+                btnSearch.addEventListener ('click', doSearch)
+           }
+        </script>
+</body>
+
+<footer>
+
+</footer>
+
+</html>
+

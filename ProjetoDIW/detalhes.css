@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #050e2d;
+}
+
+/*Scroll Bar*/
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #7dcccc;
+    border-radius: 6px;
+}
+
+header{
+    position: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b2141;
+    transition: 0.5s;
+    z-index: 1000;
+}
+
+.navbar-brand{
+    background: #1b2141;
+    color: #fff;
+    font-size: 27px;
+}
+
+.nav-link{
+    color: #fff;
+    font-size: 17px;
+}
+
+header.sticky{
+    background: #1b2141;
+    box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+}
+
+header .logo{
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+header .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin: 10px
+}
+
+header ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+header ul li a:hover{
+    background: #1aeeef;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+header .action .searchBx{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+}
+
+header .action .searchBx i{
+    font-size: 1.4em;
+    margin: 5px;
+    color: #222;
+}
+
+header .action .searchBx input{
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color: #222;
+}
+
+.nome_jogo{
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.container{
+    background: #050e2d;
+    color: #050e2d;
+    justify-content: center;
+    padding: 10px;
+}
+
+
+.container h2{
+    color: #fff;
+}
+
+ul{
+    padding: 5px;
+}
+ul .infos .data {
+    display: block;
+    text-align: left;
+    padding: 3px;
+    font-size: 18px;
+}
+
+ul .text {
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+
+.sobre{
+    color: #fff;
+}
+
+.editorial{
+    color: #fff;
+}
+
+.details{
+    background: #1b2141;
+    color: #fff;
+}
+
+.details:hover{
+    background-color: #1aeeef !important;
+    color: #050e2d !important;
+    box-shadow: 0 0 10px #1aeeef;
+    border: none;
+
+}
+.autor{
+    padding-top: 5px;
+    color: #fff;
+    text-align: center;
+}
+
+/*TELA DE PESQUISA*/
+
+.pesquisa_jogos{
+    padding: 30px;
+    text-align: center;
+}
+
+.searchbarra{
+    text-align: end;
+ }
+
+.searchbuttom{
+    text-align: center;
+}
+
+.btn-group{
+    padding-top: 50px;
+}
+
+img{
+    padding: 15px;
+}
