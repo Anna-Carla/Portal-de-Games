@@ -3,4 +3,4 @@ Trabalho de Desenvolvimento de Interfaces Web - ADS - Puc Minas 2022 1º Períod
 
 Site publicado no Replit link: https://Portal-de-Games.anna-carla.repl.co
 
-Nesse projeto foi utilizado: HTML, CSS, JavaScript, Framework BootStrap, API RAWG
+Nesse projeto foi utilizado: HTML, CSS, Framework BootStrap, API RAWG
